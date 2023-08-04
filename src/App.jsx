@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-        <h1>React Bible App</h1>
+        <h1 className="text-5xl font-bold underline">React Bible App</h1>
     </>
   )
 }
