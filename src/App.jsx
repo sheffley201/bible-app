@@ -5,8 +5,8 @@ function App() {
 	return (
 		<>
 			<Heading />
-			<div className="flex justify-center mt-5">
-				<Dropdown title="Choose Book...">
+			<div className="flex justify-center gap-x-2 mt-5">
+				<Dropdown title="Choose Book..." dropID='1'>
 					<a href="/genesis">Genesis</a>
 					<a href="/exodus">Exodus</a>
 					<a href="/leviticus">Leviticus</a>
@@ -74,6 +74,28 @@ function App() {
 					<a href="/jude">Jude</a>
 					<a href="/revelation">Revelation</a>
 				</Dropdown>
+                <Dropdown title="Choose Chapter..." dropID='2'>
+                    <a href="/genesis/1">1</a>
+                    <a href="/genesis/2">2</a>
+                    <a href="/genesis/3">3</a>
+                    <a href="/genesis/4">4</a>
+                    <a href="/genesis/5">5</a>
+                    <a href="/genesis/6">6</a>
+                    <a href="/genesis/7">7</a>
+                    <a href="/genesis/8">8</a>
+                    <a href="/genesis/9">9</a>
+                    <a href="/genesis/10">10</a>
+                </Dropdown>
+                <Dropdown title="Choose Version..." dropID='3'>
+                    <a href="/genesis/1/kjv">KJV</a>
+                    <a href="/genesis/1/nkjv">NKJV</a>
+                    <a href="/genesis/1/niv">NIV</a>
+                    <a href="/genesis/1/nlt">NLT</a>
+                    <a href="/genesis/1/esv">ESV</a>
+                    <a href="/genesis/1/nasb">NASB</a>
+                    <a href="/genesis/1/amp">AMP</a>
+                    <a href="/genesis/1/nirv">NIRV</a>
+                </Dropdown>
 			</div>
 		</>
 	);
