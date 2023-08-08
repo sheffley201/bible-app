@@ -4,8 +4,8 @@ import Dropdown from "./components/Dropdown";
 function App() {
     const location = window.location.pathname;
     const locationArray = location.split("/");
-    //make first letter of book name uppercase
-    const book = locationArray[1].charAt(0).toUpperCase() + locationArray[1].slice(1);
+    const bookLower = locationArray[1];
+    const bookUpper = locationArray[1].charAt(0).toUpperCase() + locationArray[1].slice(1);
     const chapter = locationArray[2];
 
 	return (
@@ -81,29 +81,28 @@ function App() {
 					<a href="/revelation">Revelation</a>
 				</Dropdown>
 				<Dropdown title="Choose Chapter..." dropID="2">
-					<a href="/genesis/1">1</a>
-					<a href="/genesis/2">2</a>
-					<a href="/genesis/3">3</a>
-					<a href="/genesis/4">4</a>
-					<a href="/genesis/5">5</a>
-					<a href="/genesis/6">6</a>
-					<a href="/genesis/7">7</a>
-					<a href="/genesis/8">8</a>
-					<a href="/genesis/9">9</a>
-					<a href="/genesis/10">10</a>
+					<a href={"/" + bookLower + "/1"}>1</a>
+                    <a href={"/" + bookLower + "/2"}>2</a>
+                    <a href={"/" + bookLower + "/3"}>3</a>
+                    <a href={"/" + bookLower + "/4"}>4</a>
+                    <a href={"/" + bookLower + "/5"}>5</a>
+                    <a href={"/" + bookLower + "/6"}>6</a>
+                    <a href={"/" + bookLower + "/7"}>7</a>
+                    <a href={"/" + bookLower + "/8"}>8</a>
+                    <a href={"/" + bookLower + "/9"}>9</a>
+                    <a href={"/" + bookLower + "/10"}>10</a>
 				</Dropdown>
 				<Dropdown title="Choose Version..." dropID="3">
-					<a href="/genesis/1/kjv">KJV</a>
-					<a href="/genesis/1/nkjv">NKJV</a>
-					<a href="/genesis/1/niv">NIV</a>
-					<a href="/genesis/1/nlt">NLT</a>
-					<a href="/genesis/1/esv">ESV</a>
-					<a href="/genesis/1/nasb">NASB</a>
-					<a href="/genesis/1/amp">AMP</a>
-					<a href="/genesis/1/nirv">NIRV</a>
+					<a href={"/" + bookLower + "/" + chapter + "/kjv"}>KJV</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/esv"}>ESV</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/niv"}>NIV</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/nlt"}>NLT</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/nasb"}>NASB</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/nkjv"}>NKJV</a>
+                    <a href={"/" + bookLower + "/" + chapter + "/csb"}>CSB</a>
 				</Dropdown>
 			</div>
-            <h2 className="text-center text-3xl text-slate-900 p-2 my-3 border-b-2 border-slate-400 w-fit m-auto">{book + ' ' + chapter}</h2>
+            <h2 className="text-center text-3xl text-slate-900 p-2 my-3 border-b-2 border-slate-400 w-fit m-auto">{bookUpper + ' ' + chapter}</h2>
 		</>
 	);
 }
