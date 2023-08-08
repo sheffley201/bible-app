@@ -2,11 +2,17 @@ import Heading from "./components/Heading";
 import Dropdown from "./components/Dropdown";
 
 function App() {
+    const location = window.location.pathname;
+    const locationArray = location.split("/");
+    //make first letter of book name uppercase
+    const book = locationArray[1].charAt(0).toUpperCase() + locationArray[1].slice(1);
+    const chapter = locationArray[2];
+
 	return (
 		<>
 			<Heading />
 			<div className="flex justify-center gap-x-2 mt-5">
-				<Dropdown title="Choose Book..." dropID='1'>
+				<Dropdown title="Choose Book..." dropID="1">
 					<a href="/genesis">Genesis</a>
 					<a href="/exodus">Exodus</a>
 					<a href="/leviticus">Leviticus</a>
@@ -74,29 +80,30 @@ function App() {
 					<a href="/jude">Jude</a>
 					<a href="/revelation">Revelation</a>
 				</Dropdown>
-                <Dropdown title="Choose Chapter..." dropID='2'>
-                    <a href="/genesis/1">1</a>
-                    <a href="/genesis/2">2</a>
-                    <a href="/genesis/3">3</a>
-                    <a href="/genesis/4">4</a>
-                    <a href="/genesis/5">5</a>
-                    <a href="/genesis/6">6</a>
-                    <a href="/genesis/7">7</a>
-                    <a href="/genesis/8">8</a>
-                    <a href="/genesis/9">9</a>
-                    <a href="/genesis/10">10</a>
-                </Dropdown>
-                <Dropdown title="Choose Version..." dropID='3'>
-                    <a href="/genesis/1/kjv">KJV</a>
-                    <a href="/genesis/1/nkjv">NKJV</a>
-                    <a href="/genesis/1/niv">NIV</a>
-                    <a href="/genesis/1/nlt">NLT</a>
-                    <a href="/genesis/1/esv">ESV</a>
-                    <a href="/genesis/1/nasb">NASB</a>
-                    <a href="/genesis/1/amp">AMP</a>
-                    <a href="/genesis/1/nirv">NIRV</a>
-                </Dropdown>
+				<Dropdown title="Choose Chapter..." dropID="2">
+					<a href="/genesis/1">1</a>
+					<a href="/genesis/2">2</a>
+					<a href="/genesis/3">3</a>
+					<a href="/genesis/4">4</a>
+					<a href="/genesis/5">5</a>
+					<a href="/genesis/6">6</a>
+					<a href="/genesis/7">7</a>
+					<a href="/genesis/8">8</a>
+					<a href="/genesis/9">9</a>
+					<a href="/genesis/10">10</a>
+				</Dropdown>
+				<Dropdown title="Choose Version..." dropID="3">
+					<a href="/genesis/1/kjv">KJV</a>
+					<a href="/genesis/1/nkjv">NKJV</a>
+					<a href="/genesis/1/niv">NIV</a>
+					<a href="/genesis/1/nlt">NLT</a>
+					<a href="/genesis/1/esv">ESV</a>
+					<a href="/genesis/1/nasb">NASB</a>
+					<a href="/genesis/1/amp">AMP</a>
+					<a href="/genesis/1/nirv">NIRV</a>
+				</Dropdown>
 			</div>
+            <h2 className="text-center text-3xl text-slate-900 p-2 my-3 border-b-2 border-slate-400 w-fit m-auto">{book + ' ' + chapter}</h2>
 		</>
 	);
 }
